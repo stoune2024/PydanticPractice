@@ -4,11 +4,11 @@ import os
 
 
 class Settings(BaseSettings):
-    DB_HOST: str = Field(default='postgres')
-    DB_PORT: str = Field(default='5432')
-    DB_USER: str = Field(default='postgres')
-    DB_PASS: str = Field(default='postgres')
-    DB_NAME: str = Field(default='postgres')
+    DB_HOST: str = Field(default="postgres")
+    DB_PORT: str = Field(default="5432")
+    DB_USER: str = Field(default="postgres")
+    DB_PASS: str = Field(default="postgres")
+    DB_NAME: str = Field(default="postgres")
 
     model_config = SettingsConfigDict(
         env_file=f"{os.path.dirname(os.path.abspath(__file__))}/../.env"

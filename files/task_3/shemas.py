@@ -11,12 +11,13 @@ class User(BaseModel):
     email: EmailStr
     phone_number: str
 
-
     @field_validator("phone_number")
     @classmethod
-    def validate_phone_number(cls, value:str) -> str:
+    def validate_phone_number(cls, value: str) -> str:
         if not re.match(r"^\+\d{1}-\d{3}-\d{3}-\d{4}$", value):
-            raise ValueError('Номер телефона должен соответствовать формату: +7-000-000-0000')
+            raise ValueError(
+                "Номер телефона должен соответствовать формату: +7-000-000-0000"
+            )
         return value
 
 
